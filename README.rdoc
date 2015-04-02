@@ -29,11 +29,9 @@ But that's for another day!
 
 You know the drill:
 
-```
-bundle install
-rake db:migrate
-rake db:seed
-rails server
-```
+    bundle install
+    rake db:migrate
+    rake db:seed
+    rails server
 
 Well... I think that's what it takes...
