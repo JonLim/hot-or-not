@@ -1,28 +1,39 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This small and silly app is the first thing I've ever created in Ruby on Rails. It's part of the set of projects I'm working on to get up to speed on Rails, and development in general, as I work my way toward becoming a full-time programmer.
 
-Things you may want to cover:
+=== SCOPE
 
-* Ruby version
+The Hot or Not app is the super old-school version of Tinder and today's mobile dating apps. As this was my first time actually building an app from scratch, I wanted to accomplish the following:
 
-* System dependencies
+* Get the damned thing running
+* Get a grasp of how MVC in Rails works
+* Understand and create proper migrations
+* Understand routes and how to create methods that do *actual* things in controllers
+* Create a relatively appealing front-end using ERB files
 
-* Configuration
+The only real addition that was added was Bootstrap, because it does a fantastic job with layouts right out of the box. Oh, and a set of 25 users from [Random User Generator](https://randomuser.me/), so useful.
 
-* Database creation
+=== STILL TO DO
 
-* Database initialization
+I got practically everything working, at least on my development build, but I'd like to get the following done still:
 
-* How to run the test suite
+* Admin-only maintenance of people in the system
+* Ability to select which genders appear
+* Have system remember who you already have seen and rated
+* Understand tests and write some (this is so vague...)
 
-* Services (job queues, cache servers, search engines, etc.)
+But that's for another day!
 
-* Deployment instructions
+=== DEPLOY INSTRUCTIONS
 
-* ...
+You know the drill:
 
+```
+bundle install
+rake db:migrate
+rake db:seed
+rails server
+```
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Well... I think that's what it takes...
