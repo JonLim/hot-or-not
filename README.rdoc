@@ -25,6 +25,10 @@ I got practically everything working, at least on my development build, but I'd 
 
 But that's for another day!
 
+=== DEPENDENCIES
+
+The only one that gave me trouble was PostgreSQL. Please be prepared for PostgreSQL.
+
 === DEPLOY INSTRUCTIONS
 
 You know the drill:
@@ -35,3 +39,9 @@ You know the drill:
     rails server
 
 Well... I think that's what it takes...
+
+=== DEMO
+
+You can find a working demo here: https://salty-caverns-2499.herokuapp.com/
+
+Please be kind to those faces that I don't know.
