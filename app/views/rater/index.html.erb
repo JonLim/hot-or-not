@@ -1,0 +1,62 @@
+<html>
+
+<body>
+
+<div id="main-container" class="container-fluid">
+  <div class="row">
+    <div id="main-content" class="col-xs-4 col-xs-offset-4">
+      <% offset = rand(Person.count) %>
+      <% person = Person.offset(offset).first %>
+      
+      <div id="name-hotness" class="col-xs-12 text-center">
+        <h2>
+          <%= person.name %><br />
+          <small><%= person.times_rated != 0 ? ((person.times_liked.to_f / person.times_rated) * 100).round(2) : 0.00 %>% hotness</small>
+        </h2>
+      </div>
+      
+      <img src="<%= person.imageurl %>" class="img-responsive"><br />
+      
+      <div id="notbutton" class="col-xs-6" style="display:block; text-align:center;">
+        <%= link_to notrating_path(person), class: 'btn-lg btn-block btn-danger' do %>
+          <i class="glyphicon glyphicon-remove"></i>
+        <% end %>
+      </div>
+      
+      <div id="hotbutton" class="col-xs-6" style="display:block; text-align:center;">
+        <%= link_to hotrating_path(person), class: 'btn-lg btn-block btn-success' do %>
+          <i class="glyphicon glyphicon-heart"></i>
+        <% end %>
+      </div>
+      
+    </div>
+    
+    <div id="yay-space" class="col-xs-12">
+      <p>&nbsp;</p>
+    </div>
+
+    <div id="stats-content" class="col-xs-6 col-xs-offset-3 hidden">
+
+      <table class="table">
+        <tr class="active">
+          <td>Name</td>
+          <td>Liked</td>
+          <td>Rated</td>
+        </tr>
+  
+        <% @person.each do |person| %>
+
+        <tr>
+          <td><%= person.name %></td>
+          <td><%= person.times_liked %></td>
+          <td><%= person.times_rated %></td>
+        </tr>
+
+        <% end %>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
