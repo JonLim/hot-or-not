@@ -12,7 +12,7 @@ The Hot or Not app is the super old-school version of Tinder and today's mobile 
 * Understand routes and how to create methods that do *actual* things in controllers
 * Create a relatively appealing front-end using ERB files
 
-The only real addition that was added was Bootstrap, because it does a fantastic job with layouts right out of the box. Oh, and a set of 25 users from [Random User Generator](https://randomuser.me/), so useful.
+The only real addition that was added was Bootstrap, because it does a fantastic job with layouts right out of the box. Oh, and a set of 25 users from http://randomuser.me, so useful.
 
 === STILL TO DO
 
