@@ -2,9 +2,8 @@ class RaterController < ApplicationController
   
   def index
     @people = Person.all
-    
-    offset = rand(@people.size)
-    @current_person = Person.offset(offset).first
+
+    @current_person = @people.sample
   end
   
   def show
