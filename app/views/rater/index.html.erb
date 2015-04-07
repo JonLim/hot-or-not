@@ -1,26 +1,23 @@
 <div id="main-container" class="container-fluid">
   <div class="row">
-    <div id="main-content" class="col-xs-4 col-xs-offset-4">
-      <% offset = rand(Person.count) %>
-      <% person = Person.offset(offset).first %>
-      
+    <div id="main-content" class="col-xs-4 col-xs-offset-4"> 
       <div id="name-hotness" class="col-xs-12 text-center">
         <h2>
-          <%= person.name %><br />
-          <small><%= person.times_rated != 0 ? ((person.times_liked.to_f / person.times_rated) * 100).round(2) : 0.00 %>% hotness</small>
+          <%= @current_person.name %><br />
+          <small><%= @current_person.hotness %>% hotness</small>
         </h2>
       </div>
       
-      <img src="<%= person.imageurl %>" class="img-responsive"><br />
+      <img src="<%= @current_person.imageurl %>" class="img-responsive"><br />
       
       <div id="notbutton" class="col-xs-6" style="display:block; text-align:center;">
-        <%= link_to notrating_path(person), class: 'btn-lg btn-block btn-danger' do %>
+        <%= link_to notrating_path(@current_person), class: 'btn-lg btn-block btn-danger' do %>
           <i class="glyphicon glyphicon-remove"></i>
         <% end %>
       </div>
       
       <div id="hotbutton" class="col-xs-6" style="display:block; text-align:center;">
-        <%= link_to hotrating_path(person), class: 'btn-lg btn-block btn-success' do %>
+        <%= link_to hotrating_path(@current_person), class: 'btn-lg btn-block btn-success' do %>
           <i class="glyphicon glyphicon-heart"></i>
         <% end %>
       </div>
@@ -42,7 +39,7 @@
           <td>Rated</td>
         </tr>
   
-        <% @person.each do |person| %>
+        <% @people.each do |person| %>
 
         <tr>
           <td><%= person.name %></td>
