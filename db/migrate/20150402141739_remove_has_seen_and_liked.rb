@@ -6,4 +6,12 @@ class RemoveHasSeenAndLiked < ActiveRecord::Migration
       t.integer :times_rated
     end
   end
+  
+  def down
+    change_table :people do |t|
+      t.string :has_seen
+      t.string :has_liked
+      t.remove :avg_rating, :times_rated
+    end
+  end
 end
