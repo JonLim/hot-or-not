@@ -25,10 +25,4 @@ class RaterController < ApplicationController
     redirect_to(:action => 'index')
   end
   
-  private
-  
-  def person_params
-    params.require(:person).permit(:name, :imageurl, :times_liked, :times_rated)
-  end
-  
 end
