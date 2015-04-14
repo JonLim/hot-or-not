@@ -12,16 +12,13 @@ class RaterController < ApplicationController
   
   def hot
     @person = Person.find(params[:format])
-    @person.increment(:times_liked, by = 1)
-    @person.increment(:times_rated, by = 1)
-    @person.save
+    @person.hot
     redirect_to(:action => 'index')
   end
   
   def not
     @person = Person.find(params[:format])
-    @person.increment(:times_rated, by = 1)
-    @person.save
+    @person.not
     redirect_to(:action => 'index')
   end
   
